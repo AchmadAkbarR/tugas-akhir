@@ -1,24 +1,21 @@
 #!/bin/sh
 set -e
 
-# Sesuaikan port dengan Railway
 sed -i "s/listen 80;/listen ${PORT:-80};/g" /etc/nginx/nginx.conf
 
-# Package discover
 php artisan package:discover --ansi || true
-
-# Migrasi database
 php artisan migrate --force || true
 
-# PHP-FPM di background
-php-fpm -D
+# Test config nginx dulu
+echo "=== Nginx config test ==="
+nginx -t
 
-# Tunggu FPM siap
+# Start FPM
+php-fpm -D
 sleep 2
 
-# Cek apakah FPM jalan
-echo "=== Checking PHP-FPM ==="
-ps aux | grep php-fpm
+echo "=== PORT is: ${PORT} ==="
+echo "=== PHP-FPM processes ==="
+ps aux | grep php
 
-# Nginx di foreground
 exec nginx -g "daemon off;"
