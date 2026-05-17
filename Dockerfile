@@ -29,7 +29,7 @@ COPY docker-entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # Install Laravel dependencies
-RUN composer install --no-dev --optimize-autoloader && \
+RUN composer install --no-dev --optimize-autoloader --no-scripts && \
     chown -R www-data:www-data /app
 
 # Set permissions

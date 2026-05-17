@@ -12,3 +12,4 @@ php-fpm -D
 
 # Nginx di foreground (supaya container tetap hidup)
 exec nginx -g "daemon off;"
+php artisan package:discover --ansi || true
