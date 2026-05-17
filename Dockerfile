@@ -1,7 +1,7 @@
 FROM php:8.2-fpm-alpine
 
 WORKDIR /app
-
+ENV CACHE_BUST=1
 RUN apk add --no-cache \
     nginx \
     curl \
