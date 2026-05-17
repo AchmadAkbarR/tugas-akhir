@@ -2,5 +2,4 @@
 dockerfile = "Dockerfile"
 
 [deploy]
-port = 80
-
+port = 8080
