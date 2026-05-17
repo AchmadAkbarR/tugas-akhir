@@ -1,21 +1,18 @@
 #!/bin/sh
-set -e
 
+# Hapus set -e dulu untuk debug
 sed -i "s/listen 80;/listen ${PORT:-80};/g" /etc/nginx/nginx.conf
 
-php artisan package:discover --ansi || true
-php artisan migrate --force || true
+php artisan package:discover --ansi
+php artisan migrate --force
 
-# Test config nginx dulu
-echo "=== Nginx config test ==="
-nginx -t
-
-# Start FPM
+echo "=== Starting PHP-FPM ==="
 php-fpm -D
+echo "=== PHP-FPM exit code: $? ==="
 sleep 2
 
-echo "=== PORT is: ${PORT} ==="
-echo "=== PHP-FPM processes ==="
+echo "=== PORT: ${PORT} ==="
 ps aux | grep php
 
+echo "=== Starting Nginx ==="
 exec nginx -g "daemon off;"
