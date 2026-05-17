@@ -41,8 +41,7 @@ RUN cp .env.example .env || true
 # Generate app key
 RUN php artisan key:generate || true
 
-# Run migrations
-RUN php artisan migrate --force || true
+
 
 EXPOSE 80
 

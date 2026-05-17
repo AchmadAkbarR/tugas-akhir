@@ -1,6 +1,14 @@
 #!/bin/sh
 set -e
 
-# Start PHP-FPM and Nginx together
-php-fpm -F &
-nginx -g "daemon off;"
+# Sesuaikan port dengan Railway
+sed -i "s/listen 80;/listen ${PORT:-80};/g" /etc/nginx/nginx.conf
+
+# Migrasi database (pindahkan dari Dockerfile ke sini)
+php artisan migrate --force || true
+
+# PHP-FPM di background
+php-fpm -D
+
+# Nginx di foreground (supaya container tetap hidup)
+exec nginx -g "daemon off;"
