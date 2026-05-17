@@ -42,7 +42,8 @@ RUN cp .env.example .env || true
 RUN php artisan key:generate || true
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite pdo_pgsql bcmath
-
+RUN apk add --no-cache supervisor
+COPY supervisord.conf /etc/supervisord.conf
 EXPOSE 8080
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
