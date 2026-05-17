@@ -1,3 +1,3 @@
 #!/bin/sh
 php artisan migrate --force || true
-exec supervisord -c /etc/supervisord.conf
+exec /usr/bin/supervisord -c /etc/supervisord.conf
