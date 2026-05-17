@@ -43,7 +43,7 @@ RUN php artisan key:generate || true
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite pdo_pgsql bcmath
 
-EXPOSE 80
+EXPOSE ${PORT:-80}
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
