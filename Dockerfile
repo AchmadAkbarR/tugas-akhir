@@ -41,7 +41,7 @@ RUN cp .env.example .env || true
 # Generate app key
 RUN php artisan key:generate || true
 
-
+RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite pdo_pgsql bcmath
 
 EXPOSE 80
 
