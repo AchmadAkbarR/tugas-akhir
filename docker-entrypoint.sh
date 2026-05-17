@@ -1,16 +1,19 @@
 #!/bin/sh
 
-# Sesuaikan port
 sed -i "s/listen 80;/listen ${PORT:-80};/g" /etc/nginx/nginx.conf
 
-# Migrasi
 php artisan migrate --force || true
 
-# Start PHP-FPM di background dengan cara yang benar di Alpine
-/usr/local/sbin/php-fpm --nodaemonize &
+echo "=== which php-fpm ==="
+which php-fpm
+ls /usr/local/sbin/
+ls /usr/local/bin/ | grep php
 
-# Tunggu FPM siap
+echo "=== starting fpm ==="
+php-fpm --nodaemonize &
+FPM_PID=$!
+echo "=== FPM PID: $FPM_PID ==="
 sleep 2
 
-# Start Nginx
+echo "=== starting nginx ==="
 exec nginx -g "daemon off;"
