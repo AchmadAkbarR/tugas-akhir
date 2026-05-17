@@ -1,3 +1,5 @@
 #!/bin/sh
 php artisan migrate --force || true
-exec /usr/bin/supervisord -c /etc/supervisord.conf
+echo "starting supervisord..."
+/usr/bin/supervisord -c /etc/supervisord.conf 2>&1
+echo "supervisord exited with: $?"
