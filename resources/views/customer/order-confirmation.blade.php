@@ -136,42 +136,6 @@
                 </div>
             </div>
 
-            <!-- Next Steps -->
-            <div class="card mb-4">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">📝 Langkah Selanjutnya</h5>
-                </div>
-                <div class="card-body">
-                    <ol>
-                        <li class="mb-2">
-                            <strong>Tunggu Konfirmasi Admin</strong> - Kami akan menghubungi Anda dalam 1x24 jam untuk mengkonfirmasi pesanan
-                        </li>
-                        <li class="mb-2">
-                            <strong>Proses Pembayaran</strong> - Admin akan memberikan detail rekening untuk melakukan pembayaran
-                        </li>
-                        <li class="mb-2">
-                            <strong>Verifikasi Pembayaran</strong> - Setelah kami menerima pembayaran, pesanan akan diverifikasi
-                        </li>
-                        <li class="mb-2">
-                            <strong>Pengiriman AC</strong> - AC akan dikirim sesuai H-1 sebelum tanggal sewa dimulai
-                        </li>
-                        <li>
-                            <strong>Instalasi & Penggunaan</strong> - Tim kami akan membantu instalasi dan penjelasan penggunaan AC
-                        </li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- Contact & Notes -->
-            <div class="alert alert-warning" role="alert">
-                <h6 class="alert-heading">⚠️ Penting!</h6>
-                <ul class="mb-0 small">
-                    <li>Pastikan nomor HP Anda aktif agar tidak ketinggalan kontakt dari admin</li>
-                    <li>Jika ada perubahan jadwal atau alamat, segera hubungi kami via WhatsApp</li>
-                    <li>Simpan nomor pesanan Anda: <strong>#{{ $rental->id }}</strong> untuk referensi</li>
-                </ul>
-            </div>
-
             <!-- Buttons -->
             <div class="d-grid gap-2 mb-4">
                 <a href="{{ route('customer.dashboard') }}" class="btn btn-success btn-lg">

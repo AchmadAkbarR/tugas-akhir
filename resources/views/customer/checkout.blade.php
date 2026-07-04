@@ -190,22 +190,6 @@
                                     @enderror
                                 </div>
 
-                                <!-- Agreement -->
-                                <div class="form-check mb-3">
-                                    <input 
-                                        class="form-check-input @error('agreement') is-invalid @enderror" 
-                                        type="checkbox" 
-                                        id="agreement" 
-                                        name="agreement"
-                                        required>
-                                    <label class="form-check-label" for="agreement">
-                                        Saya setuju dengan <a href="#" target="_blank">Syarat & Ketentuan</a> dan <a href="#" target="_blank">Kebijakan Privasi</a>
-                                    </label>
-                                    @error('agreement')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
                                 <!-- Buttons -->
                                 <div class="d-grid gap-2">
                                     @if($admin->stock > 0)

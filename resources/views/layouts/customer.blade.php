@@ -163,8 +163,9 @@
                 <div class="col-md-4">
                     <h6>Kontak</h6>
                     <p class="small text-white-50 mb-0">
-                        <i class="fas fa-phone"></i> WhatsApp<br>
-                          
+                        <a href="https://wa.me/1234567890" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-phone"></i> WhatsApp
+                        </a>
                     </p>
                 </div>
             </div>

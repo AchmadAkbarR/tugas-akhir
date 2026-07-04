@@ -33,4 +33,4 @@ RUN php artisan key:generate || true
 
 EXPOSE 8080
 
-ENTRYPOINT /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["sh", "/usr/local/bin/entrypoint.sh"]
