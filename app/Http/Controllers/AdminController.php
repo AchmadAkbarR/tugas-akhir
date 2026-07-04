@@ -40,9 +40,15 @@ class AdminController extends Controller
         ]);
 
         $imagePath = null;
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products', 'public');
-        }
+
+if ($request->hasFile('image')) {
+    $file = $request->file('image');
+    $filename = time() . '_' . $file->getClientOriginalName();
+
+    $file->move(public_path('images'), $filename);
+
+    $imagePath = $filename;
+}
 
         // Create with default values
         Admin::create([
