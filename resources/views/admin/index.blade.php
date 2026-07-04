@@ -40,10 +40,14 @@
                                         </td>
                                         <td>
                                             @if($ac->image)
-                                                <img src="{{ asset('storage/' . $ac->image) }}" alt="Product" style="max-width: 70px; max-height: 70px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                                            @else
-                                                <span class="text-muted">-</span>
-                                            @endif
+<img src="{{ asset('images/' . $ac->image) }}"
+     alt="Product"
+     style="max-width:70px;
+            max-height:70px;
+            border-radius:8px;
+            object-fit:cover;
+            box-shadow:0 2px 8px rgba(0,0,0,.1);">
+@endif
                                         </td>
                                         <td>
                                             <strong style="color: #667eea; font-size: 1.1rem;">Rp {{ number_format($ac->rental_price_per_day, 0, ',', '.') }}</strong>

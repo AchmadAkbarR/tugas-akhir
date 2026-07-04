@@ -24,10 +24,13 @@
             </div>
             <div class="card-body">
                 @if($admin->image)
-                    <div class="mb-4">
-                        <img src="{{ asset('storage/' . $admin->image) }}" alt="Product Image" style="max-width: 300px; max-height: 300px; border-radius: 8px; object-fit: cover;">
-                    </div>
-                @endif
+<img src="{{ asset('images/' . $admin->image) }}"
+     alt="Product Image"
+     style="max-width:300px;
+            max-height:300px;
+            border-radius:8px;
+            object-fit:cover;">
+@endif
                 
                 <div class="row mb-4">
                     <div class="col-md-12">

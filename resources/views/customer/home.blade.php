@@ -66,12 +66,13 @@
                             <div class="card h-100 product-card" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
                                 <div class="position-relative overflow-hidden product-image-container" style="height: 280px; background-color: #f8f9fa;">
                                     @if($ac->image)
-                                        <img src="{{ asset('storage/' . $ac->image) }}" class="card-img-top product-image w-100 h-100" alt="Product" style="object-fit: contain; object-position: center; padding: 15px;">
-                                    @else
-                                        <div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
-                                            <i class="fas fa-image text-muted" style="font-size: 48px;"></i>
-                                        </div>
-                                    @endif
+<img src="{{ asset('images/' . $ac->image) }}"
+     class="card-img-top product-image w-100 h-100"
+     alt="Product"
+     style="object-fit:contain;
+            object-position:center;
+            padding:15px;">
+@endif
                                     <div class="position-absolute top-0 end-0 m-3">
                                         @if($ac->stock > 0)
                                             <span class="badge bg-success" style="font-size: 0.8rem; padding: 6px 12px; border-radius: 20px;">Tersedia</span>

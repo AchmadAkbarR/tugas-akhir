@@ -51,10 +51,12 @@
                         <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*">
                         <small class="text-muted d-block mt-1">Format: JPG, PNG, WEBP (Max 2MB)</small>
                         @if(isset($admin) && $admin->image)
-                            <div class="mt-2">
-                                <img src="{{ asset('storage/' . $admin->image) }}" alt="Current Image" style="max-width: 150px; border-radius: 8px;">
-                            </div>
-                        @endif
+<div class="mt-2">
+    <img src="{{ asset('images/' . $admin->image) }}"
+         alt="Current Image"
+         style="max-width: 150px; border-radius: 8px;">
+</div>
+@endif
                         @error('image') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
